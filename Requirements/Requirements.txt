@@ -1,0 +1,120 @@
+R-2	
+The user must be able to create a new trip by adding the destination, travel dates, origin, budget, interests
+	-	Functional
+	-	High
+	High
+	March 22nd 2025, 12:27
+R-3	
+The user must be able to edit the details of an existing trip
+	-	Functional
+	-	High
+	Low
+	March 22nd 2025, 12:29
+R-4	
+The user must be able to delete a trip
+	-	Functional
+	-	High
+	Low
+	March 22nd 2025, 12:32
+R-5	
+The user must be able to share their trip plans
+	-	Functional
+	-	Medium
+	Low
+	March 22nd 2025, 12:35
+R-6	
+The user must be able to rate an experience about a trip
+	-	Functional
+	-	Medium
+	High
+	March 22nd 2025, 12:43
+R-7	
+The user must be able to interact with an AI travel assistant with voice or text
+	-	Functional
+	-	High
+	High
+	March 22nd 2025, 12:45
+R-8	
+The user must be able to receive travel suggestions from the AI based on their input
+	-	Functional
+	-	High
+	Medium
+	March 22nd 2025, 12:50
+R-9	
+The user must be able to ask AI questions about their trip details
+	-	Functional
+	-	High
+	Medium
+	March 22nd 2025, 12:52
+R-10	
+The user must be able to choose text or voice interaction with AI
+	-	Functional
+	-	High
+	High
+	March 22nd 2025, 12:54
+R-11	
+The user must be able to submit tips or experiences for locations they traveled
+	-	Functional
+	-	Medium
+	High
+	March 22nd 2025, 12:59
+R-12	
+The user must be able to see experiences and feedbacks submitted by other users
+	-	Functional
+	-	High
+	Medium
+	March 22nd 2025, 13:01
+R-13	
+The user must be able to save locations as favorites for future trip planning
+	-	Functional
+	-	High
+	Medium
+	March 22nd 2025, 13:08
+R-14	
+The user must be able to create a list of visited places
+	-	Functional
+	-	Medium
+	Medium
+	March 22nd 2025, 13:23
+R-15	
+The user must be able to manage the list of visited places
+	-	Functional
+	-	Medium
+	Medium
+	March 22nd 2025, 13:29
+R-16	
+The user must be able to save their trip plans
+	-	Functional
+	-	Medium
+	Medium
+	March 22nd 2025, 13:30
+R-17	
+The user must be able to share their trip plans
+	-	Functional
+	-	Medium
+	Low
+	March 22nd 2025, 13:32
+R-18	
+The app must be able to access the user's location
+	-	Non Functional
+	-	High
+	High
+	March 22nd 2025, 13:37
+R-19	
+The system must be able to securely store and transmit user data
+	-	Non Functional
+	-	High
+	High
+	March 22nd 2025, 13:41
+R-20	
+The app must be accessible and fully functional across modern web browsers (Chrome, Firefox, Safari) and mobile devices (iOS 10+ and Android 7+)
+	-	Non Functional
+	-	High
+	High
+	March 22nd 2025, 13:45
+R-21	
+The system must be able to connect to 3rd party services to fetch data (maps, etc.)
+	-	Non Functional
+	-	High
+	High
+	March 22nd 2025, 13:46
