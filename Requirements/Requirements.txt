@@ -1,120 +1,240 @@
-R-2	
-The user must be able to create a new trip by adding the destination, travel dates, origin, budget, interests
-	-	Functional
+R-2
+The user must be able to create a new trip plan by adding the trip details
+The user must be able to initiate a new trip plan by entering key information such as origin, destination, start and end dates, estimated budget, purpose of the trip (e.g. business, vacation), and personal interests
+	Functional
 	-	High
 	High
 	March 22nd 2025, 12:27
-R-3	
-The user must be able to edit the details of an existing trip
-	-	Functional
+R-3
+The user must be able to edit the trip details
+The user must be able to update existing trip information  in case of changes or corrections
+	Functional
 	-	High
 	Low
 	March 22nd 2025, 12:29
-R-4	
-The user must be able to delete a trip
-	-	Functional
+R-4
+The user must be able to delete a trip plan
+The user must be able to permanently remove an existing trip plan from the system, including all associated data such as activities, accommodations, and transport details
+	Functional
 	-	High
 	Low
 	March 22nd 2025, 12:32
-R-5	
-The user must be able to share their trip plans
-	-	Functional
-	-	Medium
-	Low
+R-5
+The user must be able to share their trip plan
+The user must be able to share their travel plan with others, allowing to view the plan via a generated link
+	Functional
+	-	High
+	Medium
 	March 22nd 2025, 12:35
-R-6	
-The user must be able to rate an experience about a trip
-	-	Functional
+R-6
+The user must be able to add a review about an activity
+The user must be able to leave a written review or rating about an activity they have added or experienced during their trip (e.g., restaurant, museum)
+	Functional
 	-	Medium
 	High
 	March 22nd 2025, 12:43
-R-7	
-The user must be able to interact with an AI travel assistant with voice or text
-	-	Functional
+R-7
+The user must be able to interact with the AI travel assistant, using either text or voice mode
+The user must be able to ask questions or request suggestions from an AI travel assistant, using either voice input or text chat
+	Functional
 	-	High
 	High
 	March 22nd 2025, 12:45
-R-8	
-The user must be able to receive travel suggestions from the AI based on their input
-	-	Functional
+R-8
+The AI travel assistant must be able to suggest activities based on their trip details
+The AI assistant must analyze the user’s trip data (such as destination, dates, interests) and recommend relevant activities (e.g., sightseeing spots, restaurants, events)
+	Functional
 	-	High
-	Medium
+	High
 	March 22nd 2025, 12:50
-R-9	
-The user must be able to ask AI questions about their trip details
-	-	Functional
+R-9
+The user must be able to ask the AI travel assistant questions about their trip plan
+The user must be able to request additional information or clarification about a generated plan
+	Functional
 	-	High
 	Medium
 	March 22nd 2025, 12:52
-R-10	
-The user must be able to choose text or voice interaction with AI
-	-	Functional
+R-11
+The user must be able to view the daily plan
+The user must be able to browse the full daily schedule of the trip plan, organized by date with listed activities, estimated times etc.
+	Functional
 	-	High
-	High
-	March 22nd 2025, 12:54
-R-11	
-The user must be able to submit tips or experiences for locations they traveled
-	-	Functional
-	-	Medium
-	High
+	Medium
 	March 22nd 2025, 12:59
-R-12	
-The user must be able to see experiences and feedbacks submitted by other users
-	-	Functional
+R-12
+The user must be able to see reviews by other users
+The user must be able to view reviews and rating submitted by other users for activities included in their plan
+	Functional
 	-	High
 	Medium
 	March 22nd 2025, 13:01
-R-13	
-The user must be able to save locations as favorites for future trip planning
-	-	Functional
+R-13
+The user must be able to mark an activity as completed
+The user must be able to mark any activity in their daily plan as completed after finishing it, for progress tracking and history.
+	Functional
 	-	High
 	Medium
 	March 22nd 2025, 13:08
-R-14	
-The user must be able to create a list of visited places
-	-	Functional
+R-14
+The user must be able to add activities to the daily plan
+The user must be able to manually add new activities into their daily trip plan, specifying time etc.
+	Functional
 	-	Medium
 	Medium
 	March 22nd 2025, 13:23
-R-15	
-The user must be able to manage the list of visited places
-	-	Functional
+R-15
+The user must be able to remove activities from the daily plan
+The user must be able to delete activities from the daily plan
+	Functional
 	-	Medium
 	Medium
 	March 22nd 2025, 13:29
-R-16	
-The user must be able to save their trip plans
-	-	Functional
+R-16
+The user must be able to request a new trip plan by changing trip details
+The user must be able to modify  trip inputs (destination, dates, interests) and receive an updated generated plan based on the changes
+	Functional
 	-	Medium
 	Medium
 	March 22nd 2025, 13:30
-R-17	
-The user must be able to share their trip plans
-	-	Functional
-	-	Medium
-	Low
+R-17
+The user must be able to add personal notes to any day of the trip plan
+The user must be able to attach free-text notes to each day for reminders and ideas
+	Functional
+	-	Low
+	Medium
 	March 22nd 2025, 13:32
-R-18	
+R-18
 The app must be able to access the user's location
-	-	Non Functional
+The application should request permission to access the user's current geographic location using the device's GPS or location services. This will enable features like suggesting nearby activities or auto-filling trip destinations.
+	Non Functional
 	-	High
 	High
 	March 22nd 2025, 13:37
-R-19	
+R-19
 The system must be able to securely store and transmit user data
-	-	Non Functional
+All user data ( account credentials, trip plans, preferences) must be securely stored using encryption mechanisms and transmitted over secure protocols such as HTTPS .
+	Non Functional
 	-	High
 	High
 	March 22nd 2025, 13:41
-R-20	
+R-20
 The app must be accessible and fully functional across modern web browsers (Chrome, Firefox, Safari) and mobile devices (iOS 10+ and Android 7+)
-	-	Non Functional
+The application must be responsive and compatible with all browsers and devices. It should maintain consistent functionality, layout and performance across platforms, ensuring users can access the app of the device or browser used.
+	Non Functional
 	-	High
 	High
 	March 22nd 2025, 13:45
-R-21	
-The system must be able to connect to 3rd party services to fetch data (maps, etc.)
-	-	Non Functional
+R-21
+The system must be able to connect to 3rd party services to fetch data
+The application must be able to establish secure and reliable connections with third-party services such as Google Maps, weather APIs or travel-related platforms to retrieve real-time data (destination info, suggested places, routes, weather updates).
+	Non Functional
 	-	High
 	High
 	March 22nd 2025, 13:46
+R-22
+The user must be able to add a review about a trip plan
+The user must be able to submit a summary review of their overall trip experience, after the trip is completed.
+	Functional
+	-	Medium
+	High
+	March 24th 2025, 18:07
+R-23
+The user must be able to manage their favorites list
+The user must be able to access, remove or reorder previously saved destinations and activities in their favorites
+	Functional
+	-	High
+	Medium
+	March 24th 2025, 18:59
+R-24
+The app must have a very easy to use graphic user interface (GUI requirements)
+The application interface must follow design principles to ensure that users of all technical backgrounds can easily navigate and use the app. Elements such as buttons, menus, tabsμand icons must be clearly labeled and accessible. The design should prioritize user experience (UX).
+	Non Functional
+	-	High
+	High
+	March 24th 2025, 19:04
+R-25
+The user must be able to duplicate an existing trip as a new one
+The user can copy an existing trip and use it as a base for a new plan
+	Functional
+	-	Medium
+	Medium
+	March 24th 2025, 19:18
+R-26
+The user must be able to add photos to a review
+The user can upload photos to support their written review of an activity or trip
+	Functional
+	-	Medium
+	Medium
+	March 24th 2025, 19:22
+R-27
+The user must be able to invite collaborators
+The user must be able to share a trip plan with other users, granting them edit access to co-plan the journey
+	Functional
+	-	High
+	Low
+	March 24th 2025, 19:31
+R-28
+The system must be able to serve up to 100 users at the same time
+The app should be able to serve multiple customers at the
+same time so, 100 people per store is a great enough
+number for a caffe/restaurant or ever a club.
+	Non Functional
+	-	High
+	High
+	March 24th 2025, 19:34
+R-29
+The user must be able to pay for their selected trip plan directly through the app
+The user must be able to complete payment for paid travel plans (e.g. premium services or bookings) through the integrated app checkout
+	Functional
+	-	Medium
+	Medium
+	March 24th 2025, 19:42
+R-30
+The user must be able to export their trip plan as a PDF
+The user must be able to download a printable version of their travel plan, including destination, dates, activities per day and notes
+	Functional
+	-	High
+	Medium
+	March 26th 2025, 23:23
+R-31
+The user must be able to filter AI-suggested activities based on type or preferences.
+Τhe user must be able to filter AI-suggested activities by category , time of day (morning, afternoon, evening) or personal preferences ( budget-friendly, kid-friendly). This helps users receive more relevant suggestions and improves the overall trip planning experience.
+	Functional
+	-	High
+	Medium
+	March 27th 2025, 00:45
+R-32
+The user must be able to set a trip budget
+The user must be able to define a maximum amount they plan to spend for the whole trip
+	Functional
+	-	High
+	Medium
+	March 27th 2025, 00:58
+R-33
+The user must be able to track total trip cost
+The system displays a running estimate of the total cost of all selected activities compared to the set budget
+	Functional
+	-	High
+	Medium
+	March 27th 2025, 00:59
+R-34
+The user must be able to view weather forecasts for the destination during the trip dates
+The user must be able to check the forecasted weather per day to help adjust activities accordingly
+	Functional
+	-	Low
+	Low
+	March 27th 2025, 14:57
+R-35
+The user must be able to add activities to their favorites list
+The user can mark a destination or activity as a favorite during the planning process. This allows them to revisit and reuse saved items for future trips. The system stores favorites in the user's profile for easy access and management later.
+	Functional
+	-	High
+	Medium
+	March 27th 2025, 15:40
+R-36
+The user must be able to view the generated daily and trip plan
+Once a trip has been created using key trip details (destination, dates, interests, etc.), the system automatically generates a structured daily plan. The user must be able to view this plan in a clear, day-by-day layout, including proposed activities and estimated costs.
+	Functional
+	-	High
+	High
+	March 27th 2025, 15:48
