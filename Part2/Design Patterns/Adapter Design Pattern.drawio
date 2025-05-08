@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0 (Edition std-1)" version="27.0.1">
+  <diagram id="5IlvuG5ITAoQmLvGcCio" name="Page-10">
+    <mxGraphModel dx="1001" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-1" value="&amp;lt;&amp;lt;Boundary&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;WeatherServiceInterface&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="90" y="190" width="170" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="WqbZPVjGm5J_jggOZsKR-1" vertex="1">
+          <mxGeometry y="55" width="170" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-8" value="+getWeather(): weatherData" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="WqbZPVjGm5J_jggOZsKR-1" vertex="1">
+          <mxGeometry y="63" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-9" value="&lt;br&gt;&lt;b&gt;WeatherAPIAdapter&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="414" y="273" width="170" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-10" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="WqbZPVjGm5J_jggOZsKR-9" vertex="1">
+          <mxGeometry y="55" width="170" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-12" value="+getWeather(): weatherData" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="WqbZPVjGm5J_jggOZsKR-9" vertex="1">
+          <mxGeometry y="63" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-13" value="&lt;br&gt;&lt;b&gt;ExternalWeatherAPI&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="380" y="70" width="160" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="WqbZPVjGm5J_jggOZsKR-13" vertex="1">
+          <mxGeometry y="55" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-16" value="+ fetchData(): weatherData" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="WqbZPVjGm5J_jggOZsKR-13" vertex="1">
+          <mxGeometry y="63" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-17" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.538;entryY=1.09;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" parent="1" source="WqbZPVjGm5J_jggOZsKR-9" target="WqbZPVjGm5J_jggOZsKR-16" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="380" y="270" as="sourcePoint" />
+            <mxPoint x="480" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WqbZPVjGm5J_jggOZsKR-18" value="implement" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=-0.02;exitY=0.142;exitDx=0;exitDy=0;entryX=1.013;entryY=0.598;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" parent="1" source="WqbZPVjGm5J_jggOZsKR-9" target="WqbZPVjGm5J_jggOZsKR-1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="180" y="376" as="sourcePoint" />
+            <mxPoint x="340" y="376" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="45sDig_c10HfMdrczd-E-1" value="Adapter Design Pattern Diagram" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="44" width="200" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
