@@ -20,7 +20,6 @@ tags:
   description: Operations about user
 - name: AIAssistant
   description: About AI chat
-
 paths:
   /user:
     post:
@@ -265,14 +264,123 @@ paths:
                 $ref: '#/components/schemas/Activity'
         "400":
           description: No suggestions
-  
+  /user/{userId}/favorites:
+    get:
+      tags:
+      - Favorites
+      summary: Get user's favorites list
+      operationId: getFavoritesList
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Favorites list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Favorites'
+    post:
+      tags:
+      - Favorites
+      summary: Add activity to favorites
+      operationId: addToFavorites
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Activity to be added to favorites
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Favorites'
+        required: true
+      responses:
+        "200":
+          description: Activity added to favorites
+    delete:
+      tags:
+      - Favorites
+      summary: Remove activity from favorites
+      operationId: removeFromFavorites
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: activityId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Activity removed from favorites
+  /user/{userId}/tripPlan/{tripId}/dailyPlan/{date}/activity/{activityId}/completed:
+    post:
+      tags:
+      - DailyPlan
+      summary: Mark activity as completed
+      operationId: completedActivity
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tripId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: date
+        in: path
+        required: true
+        schema:
+          type: string
+          format: date
+      - name: activityId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Activity marked as completed
+  /user/{userId}/tripPlan/{tripId}/regenerate:
+    post:
+      tags:
+      - AIAssistant
+      summary: Regenerate trip plan based on updated details
+      operationId: regenerateTripPlan
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tripId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: New plan generated
 components:
   schemas:
     User:
       required:
-      - username
-      - password
       - email
+      - password
+      - username
       type: object
       properties:
         username:
@@ -324,8 +432,8 @@ components:
             $ref: '#/components/schemas/Activity'
     DailyPlan:
       required:
-      - date
       - activities
+      - date
       properties:
         date:
           type: string
@@ -353,7 +461,7 @@ components:
           type: string
         completed:
           type: boolean
-        userNotes:
+        notes:
           type: string
     inline_response_200:
       type: object
@@ -362,9 +470,9 @@ components:
           type: string
     Review:
       required:
-      - reviewId
       - activityId
       - rating
+      - reviewId
       properties:
         reviewId:
           type: string
@@ -376,3 +484,12 @@ components:
           type: string
         photoUrl:
           type: string
+    Favorites:
+      type: object
+      properties:
+        favoriteId:
+          type: string
+        activities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Activity'
