@@ -199,6 +199,34 @@ paths:
                 $ref: '#/components/schemas/DailyPlan'
         "404":
           description: Failed to find requested daily plan
+  /user/{userId}/tripPlan/{tripId}/details:
+    post:
+      tags:
+      - TripPlan
+      summary: Edit Trip Details
+      operationId: addDetails
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tripId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TripPlan'
+        required: true
+      responses:
+        "200":
+          description: Details added
+        "400":
+          description: Failed to add details
   /user/{userId}/tripPlan/{tripId}/activity/{activityId}/review:
     post:
       tags:
