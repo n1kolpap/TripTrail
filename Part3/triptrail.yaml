@@ -1,0 +1,184 @@
+openapi: 3.0.0
+info:
+  title: TripTrail API
+  description: OpenAPI 3.0 specification for the REST API of the TripTrail app
+  version: 3.0.0
+servers:
+- url: https://api.triptrail.com/v1
+tags:
+- name: TripPlan
+  description: Everything about TripPlan
+  externalDocs:
+    description: Find out more
+    url: https://swagger.io
+- name: DailyPlan
+  description: Everything about DailyPlan
+  externalDocs:
+    description: Find out more about our store
+    url: https://swagger.io
+- name: User
+  description: Operations about user
+paths:
+  /tripPlan:
+    post:
+      tags:
+      - TripPlan
+      summary: Create a new trip plan
+      operationId: createTripPlan
+      requestBody:
+        description: Trip plan details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TripPlan'
+        required: true
+      responses:
+        "201":
+          description: Trip plan created
+        "400":
+          description: Invalid input
+  /tripPlan/{tripId}:
+    get:
+      tags:
+      - TripPlan
+      summary: Get trip plan by ID
+      operationId: getTripPlan
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Trip plan data
+        "404":
+          description: Trip plan not found
+    put:
+      tags:
+      - TripPlan
+      summary: Update trip plan by ID
+      operationId: updateTripPlan
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TripPlan'
+        required: true
+      responses:
+        "200":
+          description: Trip plan updated
+        "404":
+          description: Trip plan not found
+    delete:
+      tags:
+      - TripPlan
+      summary: Delete trip plan
+      operationId: deleteTripPlan
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Trip plan deleted
+        "404":
+          description: Trip plan not found
+  /tripPlan/{tripId}/share:
+    post:
+      tags:
+      - TripPlan
+      summary: Share a trip plan via generated link
+      operationId: shareTripPlan
+      parameters:
+      - name: tripId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Share link generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "404":
+          description: Trip plan not found
+components:
+  schemas:
+    TripPlan:
+      required:
+      - budget
+      - destination
+      - endDate
+      - interests
+      - origin
+      - startDate
+      type: object
+      properties:
+        tripId:
+          type: string
+        origin:
+          type: string
+        destination:
+          type: string
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+        budget:
+          type: number
+          format: float
+        purpose:
+          type: string
+        interests:
+          type: array
+          items:
+            type: string
+        notes:
+          type: string
+        collaborators:
+          type: array
+          items:
+            type: string
+        activities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Activity'
+    Activity:
+      required:
+      - day
+      - name
+      - time
+      type: object
+      properties:
+        activityId:
+          type: string
+        name:
+          type: string
+        location:
+          type: string
+        day:
+          type: string
+        time:
+          type: string
+        completed:
+          type: boolean
+        userNotes:
+          type: string
+    inline_response_200:
+      type: object
+      properties:
+        link:
+          type: string
