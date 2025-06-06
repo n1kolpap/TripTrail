@@ -18,13 +18,54 @@ tags:
     url: https://swagger.io
 - name: User
   description: Operations about user
+- name: AIAssistant
+  description: About AI chat
+
 paths:
-  /tripPlan:
+  /user:
+    post:
+      tags:
+      - User
+      summary: Create a new user
+      operationId: signUp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        "201":
+          description: User created
+        "400":
+          description: Invalid input
+  /user/login:
+    put:
+      tags:
+      - User
+      summary: Log in
+      operationId: logIn
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        "201":
+          description: User logged in
+        "400":
+          description: Invalid input
+  /user/{userId}/tripPlan:
     post:
       tags:
       - TripPlan
       summary: Create a new trip plan
       operationId: createTripPlan
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         description: Trip plan details
         content:
@@ -37,13 +78,18 @@ paths:
           description: Trip plan created
         "400":
           description: Invalid input
-  /tripPlan/{tripId}:
+  /user/{userId}/tripPlan/{tripId}:
     get:
       tags:
       - TripPlan
       summary: Get trip plan by ID
       operationId: getTripPlan
       parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
       - name: tripId
         in: path
         required: true
@@ -60,6 +106,11 @@ paths:
       summary: Update trip plan by ID
       operationId: updateTripPlan
       parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
       - name: tripId
         in: path
         required: true
@@ -82,6 +133,11 @@ paths:
       summary: Delete trip plan
       operationId: deleteTripPlan
       parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
       - name: tripId
         in: path
         required: true
@@ -92,13 +148,18 @@ paths:
           description: Trip plan deleted
         "404":
           description: Trip plan not found
-  /tripPlan/{tripId}/share:
+  /user/{userId}/tripPlan/{tripId}/share:
     post:
       tags:
       - TripPlan
       summary: Share a trip plan via generated link
       operationId: shareTripPlan
       parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
       - name: tripId
         in: path
         required: true
@@ -113,8 +174,113 @@ paths:
                 $ref: '#/components/schemas/inline_response_200'
         "404":
           description: Trip plan not found
+  /user/{userId}/tripPlan/{tripId}/dailyPlan:
+    get:
+      tags:
+      - DailyPlan
+      summary: View daily plan
+      operationId: viewDailyplan
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tripId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Daily plan found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyPlan'
+        "404":
+          description: Failed to find requested daily plan
+  /user/{userId}/tripPlan/{tripId}/activity/{activityId}/review:
+    post:
+      tags:
+      - TripPlan
+      summary: Add review to activity
+      operationId: activityReview
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tripId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: activityId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Review'
+        required: true
+      responses:
+        "200":
+          description: Review added
+        "400":
+          description: Failed to add review
+  /user/{userId}/tripPlan/{tripId}/AIAssistant/suggestions:
+    post:
+      tags:
+      - AIAssistant
+      summary: Ask the AI for suggestions
+      operationId: aiAsk
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tripId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          string:
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          description: Sending activity suggestions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activity'
+        "400":
+          description: No suggestions
+  
 components:
   schemas:
+    User:
+      required:
+      - username
+      - password
+      - email
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        email:
+          type: string
     TripPlan:
       required:
       - budget
@@ -156,6 +322,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Activity'
+    DailyPlan:
+      required:
+      - date
+      - activities
+      properties:
+        date:
+          type: string
+          format: date
+        activities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Activity'
     Activity:
       required:
       - day
@@ -181,4 +359,20 @@ components:
       type: object
       properties:
         link:
+          type: string
+    Review:
+      required:
+      - reviewId
+      - activityId
+      - rating
+      properties:
+        reviewId:
+          type: string
+        activityId:
+          type: string
+        rating:
+          type: integer
+        comment:
+          type: string
+        photoUrl:
           type: string
